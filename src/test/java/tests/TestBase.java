@@ -6,13 +6,16 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
+import static data.TestData.siteUrl;
 import static helpers.AttachmentsHelper.*;
 
 public class TestBase {
     @BeforeAll
     static void setup() {
         Configuration.startMaximized = true;
+        open(siteUrl);
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
