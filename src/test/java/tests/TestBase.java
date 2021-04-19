@@ -6,7 +6,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
-import static helpers.AttachmentsHelper.attachScreenshot;
+import static helpers.AttachmentsHelper.*;
 
 public class TestBase {
     @BeforeAll
@@ -18,5 +18,7 @@ public class TestBase {
     @AfterEach
     void attachScreens() {
         attachScreenshot("Last screenshot");
+        attachPageSource();
+        attachAsText("Browser console logs", getConsoleLogs());
     }
 }
