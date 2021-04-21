@@ -15,13 +15,13 @@ public class TestBase {
     @BeforeAll
     static void setup() {
         Configuration.startMaximized = true;
-        open(siteUrl);
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
         addListener("AllureSelenide", new AllureSelenide());
+        open(siteUrl);
     }
 
     @AfterEach
