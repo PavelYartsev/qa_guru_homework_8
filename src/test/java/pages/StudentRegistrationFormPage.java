@@ -62,7 +62,7 @@ public class StudentRegistrationFormPage {
                     text(studentData.get("Email")), text(studentData.get("Gender")), text(studentData.get("Mobile Phone")),
                     text(studentData.get("Subject 1")), text(studentData.get("Subject 2")), text(studentData.get("Hobby 1")),
                     text(studentData.get("Hobby 2")), text(studentData.get("File Name")), text(studentData.get("Address")),
-                    text(studentData.get("State")), text(studentData.get("City")),
+                    text(studentData.get("State" + "error")), text(studentData.get("City")),
                     text(studentData.get("Day of Birth") + " " + getMonthName(studentData.get("Month of Birth")) + "," + studentData.get("Year of Birth")));
         });
         step("Close form", () -> {
