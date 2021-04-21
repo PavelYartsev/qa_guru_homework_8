@@ -6,9 +6,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
-import static data.TestData.siteUrl;
 import static helpers.AttachmentsHelper.*;
 
 public class TestBase {
@@ -21,7 +20,6 @@ public class TestBase {
         Configuration.browserCapabilities = capabilities;
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
         addListener("AllureSelenide", new AllureSelenide());
-//        open(siteUrl);
     }
 
     @AfterEach
@@ -29,5 +27,7 @@ public class TestBase {
         attachScreenshot("Last screenshot");
         attachPageSource();
         attachAsText("Browser console logs", getConsoleLogs());
+        attachVideo();
+        closeWebDriver();
     }
 }

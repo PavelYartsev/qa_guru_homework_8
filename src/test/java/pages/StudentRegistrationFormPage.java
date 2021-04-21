@@ -4,10 +4,10 @@ import com.codeborne.selenide.SelenideElement;
 
 import java.util.Map;
 
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 import static data.TestData.*;
 import static io.qameta.allure.Allure.step;
 
