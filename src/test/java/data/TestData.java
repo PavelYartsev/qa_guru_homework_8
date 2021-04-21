@@ -14,7 +14,8 @@ public class TestData {
 
     public static final String
             siteUrl = "https://demoqa.com/automation-practice-form",
-            headerText = "Student Registration Form";
+            headerText = "Student Registration Form",
+            remoteAddress = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
 
     public static final SelenideElement
             pageHeaderLocator = $(".practice-form-wrapper"),

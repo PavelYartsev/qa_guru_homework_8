@@ -39,6 +39,9 @@ public class AttachmentsHelper {
     }
 
     public static String getConsoleLogs() {
-        return String.join("\n", Selenide.getWebDriverLogs(BROWSER));
+        if (Selenide.getWebDriverLogs(BROWSER) == null)
+            return "There is no browser logs for this test";
+        else
+            return String.join("\n", Selenide.getWebDriverLogs(BROWSER));
     }
 }

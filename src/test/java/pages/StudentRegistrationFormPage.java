@@ -105,5 +105,4 @@ public class StudentRegistrationFormPage {
     public void fillSelectInput(SelenideElement selectInputLocator, String selectInputValue) {
         selectInputLocator.setValue(selectInputValue).pressEnter();
     }
-
 }
