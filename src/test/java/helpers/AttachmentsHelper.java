@@ -39,7 +39,7 @@ public class AttachmentsHelper {
     }
 
     public static String getConsoleLogs() {
-        if (Selenide.getWebDriverLogs(BROWSER) == null)
+        if (Selenide.getWebDriverLogs(BROWSER) == null || Selenide.getWebDriverLogs(BROWSER).isEmpty())
             return "There is no browser logs for this test";
         else
             return String.join("\n", Selenide.getWebDriverLogs(BROWSER));
