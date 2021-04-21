@@ -21,7 +21,7 @@ public class TestBase {
         Configuration.browserCapabilities = capabilities;
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
         addListener("AllureSelenide", new AllureSelenide());
-        open(siteUrl);
+//        open(siteUrl);
     }
 
     @AfterEach
